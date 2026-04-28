@@ -1,15 +1,20 @@
 import pygame
 
+screen_width = 800
+screen_height = 600
+
 pygame.init()
 
-screen = pygame.display.set_mode((400, 300))
+screen = pygame.display.set_mode((screen_width, screen_height))
 
 pic = pygame.image.load("fighter_small.png")
 
 screen.fill( (123, 45, 240) )
 pygame.draw.rect(screen, (255, 0, 0), (110, 20, 120, 130) )
 
-x, y = 10, 10
+x, y = screen_width // 2, screen_height // 2
+print(f"{pic.get_width()} x {pic.get_height()} {pic.get_rect()}")
+
 running = True
 while running:
     for event in pygame.event.get():
@@ -25,6 +30,10 @@ while running:
                 x -= 10
             elif event.key == pygame.K_RIGHT:
                 x += 10
+            elif event.key == pygame.K_UP:
+                y -= 10
+            elif event.key == pygame.K_DOWN:
+                y += 10
 
     if not running:
         break
