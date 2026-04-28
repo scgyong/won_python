@@ -34,6 +34,8 @@ while running:
                 y -= 10
             elif event.key == pygame.K_DOWN:
                 y += 10
+        elif event.type == pygame.MOUSEMOTION:
+            x, y = event.pos
 
     if not running:
         break
