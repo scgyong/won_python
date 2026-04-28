@@ -12,8 +12,8 @@ pic = pygame.image.load("fighter_small.png")
 screen.fill( (123, 45, 240) )
 pygame.draw.rect(screen, (255, 0, 0), (110, 20, 120, 130) )
 
-x, y = screen_width // 2, screen_height // 2
-print(f"{pic.get_width()} x {pic.get_height()} {pic.get_rect()}")
+x = (screen_width - pic.get_width()) // 2
+y = (screen_height - pic.get_height()) // 2
 
 running = True
 while running:
