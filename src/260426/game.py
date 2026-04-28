@@ -12,8 +12,10 @@ pic = pygame.image.load("fighter_small.png")
 screen.fill( (123, 45, 240) )
 pygame.draw.rect(screen, (255, 0, 0), (110, 20, 120, 130) )
 
-x = (screen_width - pic.get_width()) // 2
-y = (screen_height - pic.get_height()) // 2
+x = screen_width // 2
+y = screen_height // 2
+half_w = pic.get_width() // 2
+half_h = pic.get_height() // 2
 
 running = True
 while running:
@@ -40,7 +42,7 @@ while running:
     if not running:
         break
 
-    screen.blit(pic, (x, y))
+    screen.blit(pic, (x - half_w, y - half_h))
     pygame.display.flip()
 
 
