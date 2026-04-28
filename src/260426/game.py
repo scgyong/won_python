@@ -1,5 +1,7 @@
 import pygame
 
+SCREEN_BG_COLOR = (0, 0, 0)
+
 screen_width = 800
 screen_height = 600
 
@@ -9,8 +11,7 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 
 pic = pygame.image.load("fighter_small.png")
 
-screen.fill( (123, 45, 240) )
-pygame.draw.rect(screen, (255, 0, 0), (110, 20, 120, 130) )
+# pygame.draw.rect(screen, (255, 0, 0), (110, 20, 120, 130) )
 
 x = screen_width // 2
 y = screen_height // 2
@@ -42,6 +43,7 @@ while running:
     if not running:
         break
 
+    screen.fill( SCREEN_BG_COLOR )
     screen.blit(pic, (x - half_w, y - half_h))
     pygame.display.flip()
 
