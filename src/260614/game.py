@@ -27,6 +27,8 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("운석 피하기")
 
+m = Meteor()
+
 # 게임 루프
 running = True
 while running:
@@ -34,6 +36,7 @@ while running:
     ## 업데이트
     ## 그리기
     screen.fill((0, 0, 0))
+    m.draw(screen)
     pygame.display.flip()
 
     ## 이벤트 처리
