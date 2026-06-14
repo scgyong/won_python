@@ -34,6 +34,8 @@ running = True
 while running:
 
     ## 업데이트
+    m.move()
+    
     ## 그리기
     screen.fill((0, 0, 0))
     m.draw(screen)
