@@ -7,7 +7,7 @@ from fighter import Fighter
 # pygame 초기화
 
 pygame.init()
-screen = pygame.display.set_mode((cfg.screen_width, cfg.screen_height))
+screen = pygame.display.set_mode((cfg.screen_width, cfg.screen_height), flags=pygame.SCALED, vsync=1)
 pygame.display.set_caption("운석 피하기")
 
 # 객체 생성
