@@ -9,6 +9,7 @@ class Meteor:
         if dx is None: dx = random.choice([-1, -0.5, 0.5, 1])
         if dy is None: dy = random.choice([-1, -0.5, 0.5, 1])
         self.x, self.y, self.dx, self.dy = x, y, dx, dy
+        self.image = pygame.image.load('meteor.png').convert_alpha()
     def move(self):
         self.x += self.dx
         if self.x >= 736 or self.x <= 0:
@@ -17,7 +18,7 @@ class Meteor:
         if self.y >= 536 or self.y <= 0:
             self.dy = -self.dy
     def draw(self, screen):
-        pass
+        screen.blit(self.image, (self.x, self.y))
 
 # Fighter 클래스 정의
 # pygame 초기화
