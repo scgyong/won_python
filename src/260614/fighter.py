@@ -30,3 +30,6 @@ class Fighter:
                 self.dx = 0
             elif event.key in (pygame.K_UP, pygame.K_DOWN):
                 self.dy = 0
+    def check_collision(self, meteor):
+        if abs(self.x - meteor.x) < self.half_width + meteor.half_width and abs(self.y - meteor.y) < self.half_height + meteor.half_height:
+            print("충돌!")

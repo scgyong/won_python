@@ -22,6 +22,10 @@ while running:
     for m in meteors:
         m.move()
     fighter.move()
+
+    ## 충돌 체크
+    for m in meteors:
+        fighter.check_collision(m)
     
     ## 그리기
     screen.fill((0, 0, 0))
