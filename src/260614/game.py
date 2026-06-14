@@ -1,6 +1,12 @@
 import pygame
 import random
 
+# pygame 초기화
+
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("운석 피하기")
+
 # Meteor 클래스 정의
 class Meteor:
     image = pygame.image.load('meteor.png').convert_alpha()
@@ -21,11 +27,6 @@ class Meteor:
         screen.blit(self.image, (self.x, self.y))
 
 # Fighter 클래스 정의
-# pygame 초기화
-
-pygame.init()
-screen = pygame.display.set_mode((800, 600))
-pygame.display.set_caption("운석 피하기")
 
 meteors = [Meteor() for _ in range(5)]
 
