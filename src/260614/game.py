@@ -1,11 +1,12 @@
 import pygame
 import random
+import cfg
 from meteor import Meteor
 
 # pygame 초기화
 
 pygame.init()
-screen = pygame.display.set_mode((800, 600))
+screen = pygame.display.set_mode((cfg.screen_width, cfg.screen_height))
 pygame.display.set_caption("운석 피하기")
 
 
