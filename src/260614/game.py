@@ -1,6 +1,6 @@
 import pygame
 import random
-import meteor as mmm
+from meteor import Meteor
 
 # pygame 초기화
 
@@ -11,7 +11,7 @@ pygame.display.set_caption("운석 피하기")
 
 # Fighter 클래스 정의
 
-meteors = [mmm.Meteor() for _ in range(5)]
+meteors = [Meteor() for _ in range(5)]
 
 # 게임 루프
 running = True
