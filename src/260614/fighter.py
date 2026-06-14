@@ -6,13 +6,14 @@ class Fighter:
         self.x = cfg.screen_width // 2
         self.y = cfg.screen_height // 2
         self.dx, self.dy = 0, 0
+        self.speed = 3
         self.image = pygame.image.load('fighter_small.png').convert_alpha()
         self.half_width = self.image.get_width() // 2
         self.half_height = self.image.get_height() // 2
         self.collision_count = 0
     def move(self):
-        self.x += self.dx
-        self.y += self.dy
+        self.x += self.dx * self.speed
+        self.y += self.dy * self.speed
         if self.collision_count > 0:
             self.collision_count -= 1
     def draw(self, screen):
