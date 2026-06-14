@@ -9,10 +9,14 @@ class Fighter:
         self.image = pygame.image.load('fighter_small.png').convert_alpha()
         self.half_width = self.image.get_width() // 2
         self.half_height = self.image.get_height() // 2
+        self.collision = False
     def move(self):
         self.x += self.dx
         self.y += self.dy
     def draw(self, screen):
+        if self.collision:
+            # draw circle
+            pygame.draw.circle(screen, (255, 0, 0), (self.x, self.y), self.half_width)
         screen.blit(self.image, (self.x - self.half_width, self.y - self.half_height))
 
     def handle_event(self, event):
@@ -34,7 +38,13 @@ class Fighter:
         dist_sq = (self.x - meteor.x) ** 2 + (self.y - meteor.y) ** 2
         radius_sum = self.half_width + meteor.half_width
         if dist_sq < radius_sum ** 2:
+            self.collision = True
             print("충돌!") 
+        else:
+            self.collision = False
     def check_collision_aabb(self, meteor):
         if abs(self.x - meteor.x) < self.half_width + meteor.half_width and abs(self.y - meteor.y) < self.half_height + meteor.half_height:
+            self.collision = True
             print("충돌!")
+        else:
+            self.collision = False
