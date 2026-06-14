@@ -39,5 +39,6 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 running = False
                 break
+        fighter.handle_event(event)
 
 pygame.quit()
