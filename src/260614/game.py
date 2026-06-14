@@ -22,8 +22,23 @@ class Meteor:
 
 # Fighter 클래스 정의
 # pygame 초기화
-# 게임 루프
-## 업데이트
-## 그리기
-## 이벤트 처리
 
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("운석 피하기")
+
+# 게임 루프
+running = True
+while running:
+
+    ## 업데이트
+    ## 그리기
+    screen.fill((0, 0, 0))
+    pygame.display.flip()
+
+    ## 이벤트 처리
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+pygame.quit()
